@@ -35,7 +35,7 @@ jobs:
           host: 3.87.214.85
           username: ubuntu
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          source: /k8s-menifest/
+          source: k8s-menifest/
           target: /home/ubuntu/
       - name: Deploy app on remote server
         uses: appleboy/ssh-action@master
