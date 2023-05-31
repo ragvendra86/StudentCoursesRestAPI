@@ -44,6 +44,6 @@ jobs:
           username: ubuntu
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            cd /home/ubuntu/
+            cd /home/ubuntu/k8s-menifest/
             kubectl apply -f deployment.yaml
             kubectl apply -f service.yaml
