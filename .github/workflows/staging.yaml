@@ -21,6 +21,9 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           args: -v
           script: |
-            cd /home/ubuntu
-            pwd
-            ip add
+            script: |
+              cd /home/ubuntu
+              pwd
+              ls -la
+              git clone https://github.com/yourusername/yourrepository.git
+              ls -la
