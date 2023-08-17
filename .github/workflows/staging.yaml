@@ -22,4 +22,5 @@ jobs:
           args: -v
           script: |
             cd /home/ubuntu
-            git clone https://github.com/singhragvendra503/StudentCoursesRestAPI.git
+            pwd
+            ip add
