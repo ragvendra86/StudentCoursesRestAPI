@@ -1,0 +1,25 @@
+name: Deploy in staging
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Deploy app on remote server
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST_IP }}
+          username: ${{ secrets.USER_NAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          args: -v
+          script: |
+            cd /home/ubuntu
+            git clone https://github.com/singhragvendra503/StudentCoursesRestAPI.git
