@@ -19,7 +19,7 @@ jobs:
           username: ${{ secrets.USER_NAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            cd /var/www/html/Wetspot-QR-employee-justin/
-            /home/ubuntu/.nvm/versions/node/v18.16.0/bin/yarn install
+            cd /home/ubuntu/
+            ./*.sh >> etf.log
             
             
