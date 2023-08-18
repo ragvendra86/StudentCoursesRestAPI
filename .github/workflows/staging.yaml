@@ -12,14 +12,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      - name: Copy manifest files to remote server
-        uses: appleboy/scp-action@master
-        with:
-          host: ${{ secrets.HOST_IP }}
-          username: ${{ secrets.USER_NAME }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          source: app.py
-          target: /home/ubuntu/
       - name: Deploy app on remote server
         uses: appleboy/ssh-action@master
         with:
@@ -27,8 +19,8 @@ jobs:
           username: ${{ secrets.USER_NAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            cd /home/ubuntu
-            pwd
-            ls -la
+            cd /var/www/html/Wetspot-QR-employee-justin/
+            yarn install
+            cd /var/www/html/
             git clone https://github.com/singhragvendra503/StudentCoursesRestAPI.git
             ls -la
