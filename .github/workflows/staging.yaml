@@ -12,6 +12,15 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18'  # Choose an appropriate Node.js version
+
+      - name: Install Yarn
+        run: npm install -g yarn
+
       - name: Deploy app on remote server
         uses: appleboy/ssh-action@master
         with:
