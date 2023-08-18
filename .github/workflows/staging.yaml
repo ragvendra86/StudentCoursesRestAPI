@@ -29,6 +29,6 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             cd /home/ubuntu/
-            ./*.sh >> etf.log
+            .UpdateServer.sh >> zxmzxm.log
             
             
