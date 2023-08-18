@@ -20,7 +20,6 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             cd /var/www/html/Wetspot-QR-employee-justin/
-            yarn cache clean
-            yarn install
+            /home/ubuntu/.nvm/versions/node/v18.16.0/bin/yarn install
             
             
